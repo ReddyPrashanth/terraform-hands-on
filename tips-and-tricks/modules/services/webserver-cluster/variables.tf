@@ -28,6 +28,16 @@ variable "max_size" {
   description = "The maximum number of EC2 instances in ASG"
 }
 
+variable "enable_autoscaling" {
+  type = bool
+  description = "If set to true, enable auto scaling"
+}
+
+variable "ami" {
+  type = string
+  description = "The AMI id"
+}
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults
@@ -38,4 +48,16 @@ variable "server_port" {
   type = number
   description = "Web server port number."
   default = 80
+}
+
+variable "custom_tags" {
+  type = map(string)
+  description = "Custom tags to set on the instances in ASG"
+  default = {}
+}
+
+variable "server_text" {
+  type = string
+  description = "Web server text for EC2 instance"
+  default = "Hello World"
 }

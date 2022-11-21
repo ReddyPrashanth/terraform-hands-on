@@ -12,4 +12,7 @@ module "webserver_cluster" {
   instance_type = "t2.micro"
   min_size = 2
   max_size = 2
+  enable_autoscaling = false
+  ami = "ami-097a2df4ac947655f"
+  server_text = "New version"
 }
